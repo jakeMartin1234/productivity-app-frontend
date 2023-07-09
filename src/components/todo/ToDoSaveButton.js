@@ -10,7 +10,7 @@ function ToDoSaveButton({ toDoData }) {
     const handleClick = async () => {
         console.log("Clicked save button");
 
-        const response = await axios.post('http://localhost:8000/addTodo', {
+        const response = await axios.post(process.env.BACKEND_URL, {
             toDoData: toDoData,
             user: user,
         });

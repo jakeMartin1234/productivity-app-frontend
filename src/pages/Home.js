@@ -16,7 +16,7 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('http://localhost:8000/getTodo', {
+                const response = await axios.post(process.env.BACKEND_URL, {
                     user: user,
                 });
                 setToDoData(response.data);
