@@ -27,11 +27,12 @@ const renderApp = (clientId) => {
 
 const fetchClientId = async() => {
     const keys = await axios.get('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/keys')
+    console.log(keys.data);
     renderApp(keys.data);
 };
 
 // Fetch Auth0 client ID from backend API during component initialization
-fetchClientId();
+await fetchClientId();
 
 
 
