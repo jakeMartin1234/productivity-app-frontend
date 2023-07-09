@@ -11,7 +11,7 @@ const renderApp = (clientId) => {
     createRoot(document.getElementById('root')).render(
         <div className="App">
             <Auth0Provider
-                domain={process.env.REACT_APP_AUTH0_DOMAIN}
+                domain={"dev-zf5rma6cwrgiqo0n.us.auth0.com"}
                 clientId={clientId}
                 authorizationParams={{
                     redirect_uri: window.location.origin,
@@ -26,7 +26,7 @@ const renderApp = (clientId) => {
 };
 
 const fetchClientId = async() => {
-    const keys = await axios.get(process.env.Backend_URL + '/keys')
+    const keys = await axios.get('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/keys')
     renderApp(keys.data);
 };
 

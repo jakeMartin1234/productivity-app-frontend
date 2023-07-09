@@ -16,7 +16,8 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post(process.env.BACKEND_URL + 'getTodo', {
+                const response = await axios.post('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/getTodo',
+                    {
                     user: user,
                 });
                 setToDoData(response.data);

@@ -10,7 +10,8 @@ function ToDoSaveButton({ toDoData }) {
     const handleClick = async () => {
         console.log("Clicked save button");
 
-        const response = await axios.post(process.env.BACKEND_URL + 'addToDo', {
+        const response = await axios.post('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/addToDo',
+            {
             toDoData: toDoData,
             user: user,
         });
