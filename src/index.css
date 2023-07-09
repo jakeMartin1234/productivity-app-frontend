@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+#root {
+  width: 100%;
+  text-align: center;
+}
+
+.App {
+  min-height: 200px;
+  min-width: 700px;
+}
+
