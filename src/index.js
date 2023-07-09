@@ -26,7 +26,7 @@ const renderApp = (clientId) => {
 };
 
 const fetchClientId = async() => {
-    const keys = await axios.get('http://localhost:8000/keys')
+    const keys = await axios.get(process.env.Backend_URL + '/keys')
     renderApp(keys.data);
 };
 
