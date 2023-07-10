@@ -27,7 +27,8 @@ const renderApp = (clientId) => {
 };
 
 const fetchClientId = async() => {
-    const keys = await axios.get('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/keys')
+    console.log(process.env.REACT_APP_BACKEND_URL);
+    const keys = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/keys`)
     console.log(keys);
     renderApp(keys.data);
 };

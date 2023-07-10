@@ -15,7 +15,7 @@ const Home = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.post('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/getTodo',
+                const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/getTodo`,
                     {
                     user: user,
                 });
