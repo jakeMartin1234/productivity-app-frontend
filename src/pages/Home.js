@@ -2,7 +2,6 @@ import React, {useEffect} from "react";
 import LogoutButton from "../components/identity/LogoutButton";
 import {Box, Toolbar, AppBar, Typography, Button, List, IconButton, Avatar} from "@mui/material";
 import ToDoPage from "./ToDoPage";
-import Calendar from "./Calendar";
 import HomeLandingPage from "./HomeLandingPage";
 import axios from "axios";
 import Profile from "../components/identity/Profile";
@@ -54,8 +53,6 @@ const Home = () => {
                 changeCheck={handleCheckboxToggle}
                 deleteToDo={handleDeleteTodo}
             />
-        } else if (renderedComponent === "calendar") {
-            return <Calendar />
         } else if (renderedComponent === "profile") {
             return <Profile />
         } else {
@@ -88,13 +85,6 @@ const Home = () => {
                             onClick={() => handleAppBarClick("todo")}
                         >
                             TODO LIST
-                        </Button>
-                        <Button
-                            variant="text"
-                            color="secondary"
-                            onClick={() => handleAppBarClick("calendar")}
-                        >
-                            CALENDAR
                         </Button>
                     </List>
 
