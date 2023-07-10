@@ -8,13 +8,14 @@ import theme from './components/utils/Theme';
 import axios from 'axios';
 
 const renderApp = (clientId) => {
+    console.log(window.location.origin);
     createRoot(document.getElementById('root')).render(
         <div className="App">
             <Auth0Provider
                 domain={"dev-zf5rma6cwrgiqo0n.us.auth0.com"}
                 clientId={clientId}
                 authorizationParams={{
-                    redirect_uri: window.location.origin,
+                    redirect_uri: `${window.location.origin}/productivity-app-frontend`,
                 }}
             >
                 <ThemeProvider theme={theme}>
@@ -27,7 +28,7 @@ const renderApp = (clientId) => {
 
 const fetchClientId = async() => {
     const keys = await axios.get('https://productivity-app-backend1-cf19c6c0aed8.herokuapp.com/keys')
-    console.log(keys.data);
+    console.log(keys);
     renderApp(keys.data);
 };
 
